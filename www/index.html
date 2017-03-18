@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>Landlord Tenant App</title>
+
+  <link rel="manifest" href="manifest.json">
+
+  <!-- inject:css -->
+  <link rel="stylesheet" href="css/ionic.app.css">
+  <link rel="stylesheet" href="css/login-style.css">
+  <!-- endinject -->
+
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+  <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+
+  <!-- cordova script (this will be a 404 during development) -->
+  <!--<script src="cordova.js"></script>-->
+
+  <!--App JS-->
+  <script src="js/landlordTenant.module.js"></script>
+
+  <script src="js/features/login/login.module.js"></script>
+  <script src="js/features/login/login.controller.js"></script>
+  <script src="js/features/login/login.route.js"></script>
+</head>
+<body ng-app="landlordTenant">
+<ui-view>
+
+</ui-view>
+
+</body>
+</html>
