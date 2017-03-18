@@ -6,16 +6,32 @@ var mongoose = require("mongoose");
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
-var Landlord = require("./models/landlordModel.js");
+var Landlord = require("./models/Landlord.js");
+var Property = require("./models/Property.js");
 
 //var sampleLandlord = new Landlord({
-//  email: 'email@email.com',
-//  firstName: 'Edgar',
+//  email: 'email3@email.com',
+//  firstName: 'Jane',
 //  lastName: 'Allan Poe',
 //  password: 'pass1234'
 //})
 //
 //sampleLandlord.save(function(err, doc) {
+//  if (err) {
+//    console.log(err);
+//  } else {
+//    console.log(doc);
+//  }
+//});
+
+//var sampleProperty = new Property({
+//  streetAddress: '524 Main St',
+//  city: 'Miami',
+//  state: 'FL',
+//  zip: '45667'
+//})
+//
+//sampleProperty.save(function(err, doc) {
 //  if (err) {
 //    console.log(err);
 //  } else {
@@ -46,6 +62,9 @@ db.once("open", function() {
 });
 
 app.get("/api/landlords", function(req, res) {
+  //var userEmail = sessionStorage.getItem('userEmail');
+  //var userPassword = sessionStorage.getItem('userPassword');
+
   Landlord.find({}, function(err, doc) {
     if (err) {
     console.log(err);

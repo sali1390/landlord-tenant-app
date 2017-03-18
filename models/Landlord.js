@@ -24,7 +24,13 @@ var LandlordSchema = new Schema({
       6,
       "Your password needs to be longer."
     ]
-  }
+  },
+  properties: [{
+    // Store ObjectIds in the array
+    type: Schema.Types.ObjectId,
+    // The ObjectIds will refer to the ids in the Note model
+    ref: "Property"
+  }]
 });
 
 var Landlord = mongoose.model("Landlord", LandlordSchema);

@@ -1,13 +1,15 @@
 angular
   .module('landlordTenant', [
     'ionic',
-    'landlordTenant.login'
+    'landlordTenant.signin',
+    'landlordTenant.properties',
+    'landlordTenant.tenants'
   ])
   .config(landlordTenantConfig)
   .run(landlordTenantRun);
 
 function landlordTenantConfig($urlRouterProvider) {
-  $urlRouterProvider.otherwise('/login')
+  $urlRouterProvider.otherwise('/signin')
 }
 
 function landlordTenantRun($ionicPlatform) {
