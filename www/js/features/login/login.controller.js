@@ -2,7 +2,7 @@ angular
   .module('landlordTenant.login')
   .controller('LoginCtrl', LoginCtrl);
 
-function LoginCtrl() {
+function LoginCtrl($http) {
   var vm = this;
   vm.userInfo = {}
 
@@ -15,6 +15,13 @@ function LoginCtrl() {
 
     var userEmail = sessionStorage.getItem('userEmail');
 
-    console.log(userEmail)
+    //console.log(userEmail);
+
+    $http({
+      method: 'GET',
+      url: '/api/landlords'
+    }).then(function successCallback(res) {
+      console.log(res)
+    })
   }
 }
