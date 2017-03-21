@@ -40,7 +40,23 @@ var Property = require("./models/Property.js");
 //  }
 //});
 
-app.use(bodyParser.urlencoded({
+//var sampleTenant = new Tenant({
+//  email: 'email3@email.com',
+//  firstName: 'Jane',
+//  lastName: 'Allan Poe',
+//  password: 'pass1234',
+//  landlordCode: '4321'
+//});
+//
+//sampleTenant.save(function(err, doc) {
+//  if (err) {
+//    console.log(err);
+//  } else {
+//    console.log(doc);
+//  }
+//});
+
+app.use(bodyParser.json({
   extended: false
 }));
 
@@ -75,6 +91,19 @@ app.get("/api/landlords", function(req, res) {
   })
 });
 
+app.get("/api/tenants", function(req, res) {
+  //var userEmail = sessionStorage.getItem('userEmail');
+  //var userPassword = sessionStorage.getItem('userPassword');
+
+  Tenant.find({}, function(err, doc) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(doc);
+    }
+  })
+});
+
 app.get("/api/properties", function(req, res) {
   //var userEmail = sessionStorage.getItem('userEmail');
   //var userPassword = sessionStorage.getItem('userPassword');
@@ -88,11 +117,27 @@ app.get("/api/properties", function(req, res) {
   })
 });
 
-app.post("api/landlords", function(req, res) {
+app.post("/api/landlords", function(req, res) {
+  console.log(req.body);
   Landlord.create({
-  })
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    password: req.body.password
+  }, function(err) {
+    if (err) return (err);
+  });
+  res.end();
 });
 
-app.post("api/tenants", function(req, res) {
-  Tenant.create({})
+app.post("/api/tenants", function(req, res) {
+  Tenant.create({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    password: req.body.password
+  }, function(err) {
+    if (err) return (err);
+  });
+  res.end();
 });

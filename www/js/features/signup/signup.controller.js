@@ -6,25 +6,32 @@ function SignupCtrl($http, $state) {
   var vm = this;
 
   vm.landlordContinue = function(req, res) {
+    $http({
+      method: 'POST',
+      url: '/api/landlords',
+      data: {
+        firstName: vm.userInfo.firstname,
+        lastName: vm.userInfo.lastname,
+        email: vm.userInfo.email,
+        password: vm.userInfo.password
+      }
+    }).then(function successCallback(res) {
+      $state.go("properties");
+    })
+  };
 
-    //function newLandlord() {
-    //  $http({
-    //    method: 'POST',
-    //    url: '/api/landlords'
-    //  }).then(function successCallback(res) {
-    //    console.log(res);
-    //    for (i = 0; i < res.data.length; i++) {
-    //      if (res.data[i].email == userEmail && res.data[i].password == userPassword) {
-    //        console.log("Login Success");
-    //        $state.go("properties");
-    //        return;
-    //      } else {
-    //        $stage.go("signup")
-    //      }
-    //    }
-    //  })
-    //}
-
-    checkUser();
-  }
+  vm.tenantContinue = function(req, res) {
+    $http({
+      method: 'POST',
+      url: '/api/tenants',
+      data: {
+        firstName: vm.userInfo.firstname,
+        lastName: vm.userInfo.lastname,
+        email: vm.userInfo.email,
+        password: vm.userInfo.password
+      }
+    }).then(function successCallback(res) {
+      $state.go("properties");
+    })
+  };
 }

@@ -35,7 +35,11 @@ var LandlordSchema = new Schema({
     type: Schema.Types.ObjectId,
     // The ObjectIds will refer to the ids in the Tenant model
     ref: "Tenant"
-  }]
+  }],
+  landlord: {
+    type: Boolean,
+    default: true
+  }
 });
 
 var Landlord = mongoose.model("Landlord", LandlordSchema);

@@ -35,7 +35,7 @@ function SigninCtrl($http, $state) {
     }
 
     checkUser();
-  }
+  };
 
   vm.signup = function() {
     $state.go("signup");

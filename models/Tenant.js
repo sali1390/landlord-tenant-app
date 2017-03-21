@@ -16,10 +16,6 @@ var TenantSchema = new Schema({
     required: true,
     trim: true
   },
-  landlordcode: {
-    type: String,
-    required: true
-  },
   password: {
     type: String,
     required: true,
@@ -28,6 +24,16 @@ var TenantSchema = new Schema({
       6,
       "Your password needs to be longer."
     ]
+  },
+  requests: {
+    // Store ObjectIds in the array
+    type: Schema.Types.ObjectId,
+    // The ObjectIds will refer to the ids in the Property model
+    ref: "Request"
+  },
+  landlord: {
+    type: Boolean,
+    default: false
   }
 });
 
