@@ -2,11 +2,17 @@ angular
   .module('landlordTenant.properties')
   .controller('PropertiesCtrl', PropertiesCtrl);
 
-function PropertiesCtrl($http) {
+function PropertiesCtrl($http, $state) {
   var vm = this;
 
   var userEmail = sessionStorage.getItem('userEmail');
   var userPassword = sessionStorage.getItem('userPassword');
+
+  console.log("Logged in as " + userEmail);
+
+  if(userEmail === null) {
+    $state.go('signin')
+  }
 
   $http({
     method: 'GET',

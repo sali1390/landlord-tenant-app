@@ -108,13 +108,14 @@ app.get("/api/properties", function(req, res) {
   //var userEmail = sessionStorage.getItem('userEmail');
   //var userPassword = sessionStorage.getItem('userPassword');
 
-  Property.find({}, function(err, doc) {
+  Landlord.find({
+  }, function(err, doc) {
     if (err) {
       console.log(err);
     } else {
       res.send(doc);
     }
-  })
+  }).populate('properties')
 });
 
 app.post("/api/landlords", function(req, res) {

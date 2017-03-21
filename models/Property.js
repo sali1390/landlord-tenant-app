@@ -19,7 +19,17 @@ var PropertySchema = new Schema({
   zip: {
     type: Number,
     required: true
-  }
+  },
+  tenants: [{
+    type: Schema.Types.ObjectId,
+    // The ObjectIds will refer to the ids in the Tenant model
+    ref: "Tenant"
+  }],
+  requests: [{
+    type: Schema.Types.ObjectId,
+    // The ObjectIds will refer to the ids in the Tenant model
+    ref: "Request"
+  }]
 });
 
 var Property = mongoose.model("Property", PropertySchema);

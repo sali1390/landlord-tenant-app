@@ -16,6 +16,9 @@ function SignupCtrl($http, $state) {
         password: vm.userInfo.password
       }
     }).then(function successCallback(res) {
+      sessionStorage.setItem('userEmail', vm.userInfo.email);
+      sessionStorage.setItem('userPassword', vm.userInfo.password);
+
       $state.go("properties");
     })
   };
@@ -31,6 +34,9 @@ function SignupCtrl($http, $state) {
         password: vm.userInfo.password
       }
     }).then(function successCallback(res) {
+      sessionStorage.setItem('userEmail', vm.userInfo.email);
+      sessionStorage.setItem('userPassword', vm.userInfo.password);
+
       $state.go("properties");
     })
   };
