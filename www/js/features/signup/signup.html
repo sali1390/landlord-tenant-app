@@ -1,0 +1,60 @@
+<ion-tabs class="tabs-positive tabs-icon-bottom">
+
+  <ion-tab title="New Landlord" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
+    <div class="">
+      <h1 class="title">Landlord-Tenant Signup</h1>
+    </div>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" name="firstname" placeholder="First Name" ng-model="SignupVM.userInfo.firstname">
+      </label>
+      <label class="item item-input">
+        <input type="text" name="lastname" placeholder="Last Name" ng-model="SignupVM.userInfo.lastname">
+      </label>
+      <label class="item item-input">
+        <input type="text" name="email" placeholder="Email Address" ng-model="SignupVM.userInfo.email">
+      </label>
+      <label class="item item-input">
+        <input type="text" name="password" placeholder="Password" ng-model="SignupVM.userInfo.password">
+      </label>
+      <label class="item item-input">
+        <input type="text" name="password2" placeholder="Re-Enter Password" ng-model="SignupVM.userInfo.password2">
+      </label>
+    </div>
+
+    <button class="button button-calm button-block center-button" ng-click="SignupVM.landlordContinue()">
+      SIGN UP
+    </button>
+  </ion-tab>
+
+  <ion-tab title="new Tenant" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
+    <div class="">
+      <h1 class="title">Landlord-Tenant Signup</h1>
+    </div>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" name="firstname" placeholder="First Name" ng-model="SignupVM.userInfo.firstname">
+      </label>
+      <label class="item item-input">
+        <input type="text" name="lastname" placeholder="Last Name" ng-model="SignupVM.userInfo.lastname">
+      </label>
+      <label class="item item-input">
+        <input type="text" name="email" placeholder="Email Address" ng-model="SignupVM.userInfo.email">
+      </label>
+      <label class="item item-input">
+        <input type="text" name="landlordCode" placeholder="Landlord Code" ng-model="SignupVM.userInfo.landlordCode">
+      </label>
+      <label class="item item-input">
+        <input type="text" name="password" placeholder="Password" ng-model="SignupVM.userInfo.password">
+      </label>
+      <label class="item item-input">
+        <input type="text" name="password2" placeholder="Re-Enter Password" ng-model="SignupVM.userInfo.password2">
+      </label>
+    </div>
+
+    <button class="button button-calm button-block center-button" ng-click="SignupVM.tenantContinue()">
+      SIGN UP
+    </button>
+  </ion-tab>
+
+</ion-tabs>

@@ -90,7 +90,6 @@ app.get("/api/properties", function(req, res) {
 
 app.post("api/landlords", function(req, res) {
   Landlord.create({
-
   })
 });
 
