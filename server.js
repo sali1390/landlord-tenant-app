@@ -6,6 +6,7 @@ var mongoose = require("mongoose");
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
+var Tenant = require("./models/Tenant.js");
 var Landlord = require("./models/Landlord.js");
 var Property = require("./models/Property.js");
 
@@ -72,4 +73,27 @@ app.get("/api/landlords", function(req, res) {
       res.send(doc);
     }
   })
+});
+
+app.get("/api/properties", function(req, res) {
+  //var userEmail = sessionStorage.getItem('userEmail');
+  //var userPassword = sessionStorage.getItem('userPassword');
+
+  Property.find({}, function(err, doc) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(doc);
+    }
+  })
+});
+
+app.post("api/landlords", function(req, res) {
+  Landlord.create({
+
+  })
+});
+
+app.post("api/tenants", function(req, res) {
+  Tenant.create({})
 });

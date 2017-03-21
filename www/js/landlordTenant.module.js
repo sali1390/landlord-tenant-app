@@ -2,6 +2,7 @@ angular
   .module('landlordTenant', [
     'ionic',
     'landlordTenant.signin',
+    'landlordTenant.signup',
     'landlordTenant.properties',
     'landlordTenant.tenants'
   ])

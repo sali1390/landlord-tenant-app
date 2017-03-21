@@ -2,7 +2,7 @@ angular
   .module('landlordTenant.signin')
   .controller('SigninCtrl', SigninCtrl);
 
-function SigninCtrl($http) {
+function SigninCtrl($http, $state) {
   var vm = this;
   vm.userInfo = {};
 
@@ -12,25 +12,32 @@ function SigninCtrl($http) {
     sessionStorage.setItem('userPassword', vm.userInfo.password);
 
     var userEmail = sessionStorage.getItem('userEmail');
+    var userPassword = sessionStorage.getItem('userPassword');
 
     console.log(userEmail);
 
-    checkUser()
-  };
+    function checkUser() {
+      $http({
+        method: 'GET',
+        url: '/api/landlords'
+      }).then(function successCallback(res) {
+        console.log(res);
+        for (i = 0; i < res.data.length; i++) {
+          if (res.data[i].email == userEmail && res.data[i].password == userPassword) {
+            console.log("Login Success");
+            $state.go("properties");
+            return;
+          } else {
+            $state.go("signup")
+          }
+        }
+      })
+    }
 
-  function checkUser(req, res) {
-    $http({
-      method: 'GET',
-      url: '/api/landlords'
-    }).then(function successCallback(res) {
-      console.log(res);
-      //for (i=0; i< res.data.length; i++){
-      //  if (res.data[i].email == userEmail) {
-      //    console.log("Login Success");
-      //  } else {
-      //    console.log("Login Failed");
-      //  }
-      //}
-    })
+    checkUser();
+  }
+
+  vm.signup = function() {
+    $state.go("signup");
   }
 }
