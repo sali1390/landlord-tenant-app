@@ -1,11 +1,23 @@
 <ion-view>
   <ion-content>
-    <div class="bar bar-header bar-light">
-      <h1 class="title">Your Properties</h1>
-    </div>
-    <!--<property ng-repeat="property in PropertiesVM.properties" property-data="property"></property>-->
-    <div>
-      <p></p>
-    </div>
+    <!--<div class="bar bar-header bar-light">-->
+      <!--<h1 class="title">Your Properties</h1>-->
+    <!--</div>-->
+    <property ng-repeat="property in PropertiesVM.properties" property-data="property">
+      <ion-card>
+        <a ui-sref="singleProperty" ng-click="getInfo()"><img src="{{property.img}}"/></a>
+        <ion-card-content>
+          <ion-card-title>
+            <a ui-sref="singleProperty"><h3>{{property.streetAddress}}</h3></a>
+            <a ui-sref="singleProperty"><h5>{{property.city}}, {{property.state}}</h5></a>
+          </ion-card-title>
+          <!--ng-repeat within an ng-repeat-->
+          <div ng-repeat="tenant in property.tenants">
+            {{tenant.firstName}} {{tenant.lastName}}
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <br>
+    </property>
   </ion-content>
 </ion-view>

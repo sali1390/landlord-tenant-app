@@ -56,6 +56,10 @@ var Property = require("./models/Property.js");
 //  }
 //});
 
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+
 app.use(bodyParser.json({
   extended: false
 }));
@@ -115,7 +119,26 @@ app.get("/api/properties", function(req, res) {
     } else {
       res.send(doc);
     }
-  }).populate('properties')
+  }).populate({
+    path: 'properties',
+    populate: {
+      path: 'tenants'
+    }
+  })
+});
+
+app.get("/api/tenants", function(req, res) {
+  //var userEmail = sessionStorage.getItem('userEmail');
+  //var userPassword = sessionStorage.getItem('userPassword');
+
+  Landlord.find({
+  }, function(err, doc) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(doc);
+    }
+  }).populate('tenants')
 });
 
 app.post("/api/landlords", function(req, res) {

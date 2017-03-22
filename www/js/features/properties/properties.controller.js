@@ -22,18 +22,20 @@ function PropertiesCtrl($http, $state) {
 
     var properties = [];
 
-    for (i = 0; i < res.data.length; i++) {
+    for(var i = 0; i < res.data.length; i++) {
       if (res.data[i].email == userEmail) {
-        properties.push(res.data[i].properties);
-
+        for(var j = 0; j < res.data[i].properties.length; j++) {
+          properties.push(res.data[i].properties[j]);
+        }
         vm.properties = properties;
 
-        console.log("Properties: " + properties);
+        console.log("Properties: " + JSON.stringify(properties));
 
         return;
       } else {
 
       }
     }
-  })
+  });
+
 }

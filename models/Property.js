@@ -20,6 +20,10 @@ var PropertySchema = new Schema({
     type: Number,
     required: true
   },
+  img: {
+    type: String,
+    required: false
+  },
   tenants: [{
     type: Schema.Types.ObjectId,
     // The ObjectIds will refer to the ids in the Tenant model
