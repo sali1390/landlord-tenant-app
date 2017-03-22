@@ -95,19 +95,6 @@ app.get("/api/landlords", function(req, res) {
   })
 });
 
-app.get("/api/tenants", function(req, res) {
-  //var userEmail = sessionStorage.getItem('userEmail');
-  //var userPassword = sessionStorage.getItem('userPassword');
-
-  Tenant.find({}, function(err, doc) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.send(doc);
-    }
-  })
-});
-
 app.get("/api/properties", function(req, res) {
   //var userEmail = sessionStorage.getItem('userEmail');
   //var userPassword = sessionStorage.getItem('userPassword');
@@ -138,7 +125,7 @@ app.get("/api/tenants", function(req, res) {
     } else {
       res.send(doc);
     }
-  }).populate('tenants')
+  }).populate({path: 'tenants'})
 });
 
 app.post("/api/landlords", function(req, res) {

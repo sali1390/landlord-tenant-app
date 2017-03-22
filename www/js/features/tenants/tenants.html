@@ -1,5 +1,7 @@
 <ion-view>
   <ion-content>
-
+    <div ng-repeat="tenant in TenantsVM.tenants">
+      {{tenant.firstName}} {{tenant.lastName}}
+    </div>
   </ion-content>
 </ion-view>

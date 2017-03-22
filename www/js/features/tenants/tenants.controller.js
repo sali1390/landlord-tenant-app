@@ -22,19 +22,20 @@ function TenantsCtrl($http) {
 
     var tenants = [];
 
-    //for(var i = 0; i < res.data.length; i++) {
-    //  if (res.data[i].email == userEmail) {
-    //    for(var j = 0; j < res.data[i].properties.length; j++) {
-    //      properties.push(res.data[i].properties[j]);
-    //    }
-    //    vm.properties = properties;
-    //
-    //    console.log("Properties: " + JSON.stringify(properties));
-    //
-    //    return;
-    //  } else {
-    //
-    //  }
-    //}
+    for(var i = 0; i < res.data.length; i++) {
+      if (res.data[i].email == userEmail) {
+
+        for(var j = 0; j < res.data[i].tenants.length; j++) {
+          tenants.push(res.data[i].tenants[j]);
+        }
+        vm.tenants = tenants;
+
+        console.log("Tenants: " + JSON.stringify(tenants));
+
+        return;
+      } else {
+
+      }
+    }
   });
 }
