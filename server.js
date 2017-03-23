@@ -9,6 +9,7 @@ mongoose.Promise = Promise;
 var Tenant = require("./models/Tenant.js");
 var Landlord = require("./models/Landlord.js");
 var Property = require("./models/Property.js");
+var Request = require("./models/Request.js");
 
 //var sampleLandlord = new Landlord({
 //  email: 'email3@email.com',
@@ -49,6 +50,19 @@ var Property = require("./models/Property.js");
 //});
 //
 //sampleTenant.save(function(err, doc) {
+//  if (err) {
+//    console.log(err);
+//  } else {
+//    console.log(doc);
+//  }
+//});
+
+//var sampleRequest = new Request({
+//  title: 'Busted Window',
+//  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+//});
+//
+//sampleRequest.save(function(err, doc) {
 //  if (err) {
 //    console.log(err);
 //  } else {
@@ -108,10 +122,11 @@ app.get("/api/properties", function(req, res) {
     }
   }).populate({
     path: 'properties',
-    populate: {
+    populate: [{
       path: 'tenants'
-    }
-  })
+    },
+    {path: 'requests'}]
+  });
 });
 
 app.get("/api/tenants", function(req, res) {

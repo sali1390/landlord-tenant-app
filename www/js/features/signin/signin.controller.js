@@ -14,8 +14,6 @@ function SigninCtrl($http, $state) {
     var userEmail = sessionStorage.getItem('userEmail');
     var userPassword = sessionStorage.getItem('userPassword');
 
-    console.log(userEmail);
-
     function checkUser() {
       $http({
         method: 'GET',
@@ -24,8 +22,11 @@ function SigninCtrl($http, $state) {
         console.log(res);
         for (i = 0; i < res.data.length; i++) {
           if (res.data[i].email == userEmail && res.data[i].password == userPassword) {
-            console.log("Login Success");
-            $state.go("properties");
+            if(res.data[i].landlord === true) {
+              $state.go("properties");
+            } else {
+              $state.go("requests")
+            }
             return;
           } else {
             $state.go("signup")

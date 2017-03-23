@@ -15,12 +15,14 @@ var RequestSchema = new Schema({
     type: String,
     required: true
   },
-  pictures: {
-    type: Number,
-    required: true
+  images: {
+    type: String
+  },
+  tenant: {
+    type: String
   }
 });
 
-var Property = mongoose.model("Property", PropertySchema);
+var Request = mongoose.model("Request", RequestSchema);
 
-module.exports = Property;
+module.exports = Request;

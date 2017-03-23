@@ -4,8 +4,10 @@ angular
     'landlordTenant.signin',
     'landlordTenant.signup',
     'landlordTenant.properties',
+    'landlordTenant.newProperty',
     'landlordTenant.tenants',
-    'landlordTenant.singleProperty'
+    'landlordTenant.singleProperty',
+    'landlordTenant.requests'
   ])
   .config(landlordTenantConfig)
   .run(landlordTenantRun);

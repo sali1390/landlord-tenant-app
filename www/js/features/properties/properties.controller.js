@@ -38,4 +38,8 @@ function PropertiesCtrl($http, $state) {
     }
   });
 
+  vm.newProperty = function() {
+    $state.go('newProperty')
+  }
+
 }
