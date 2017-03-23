@@ -1,4 +1,4 @@
 angular
-  .module('landlordTenant.properties', [
+  .module('landlordTenant.userProfile', [
     'ngCordova'
   ]);

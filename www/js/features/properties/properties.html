@@ -1,31 +1,27 @@
-
-
 <div class="bar bar-header bar-light">
 <h1 class="title">Your Properties <i class="icon ion-plus" style="text-align:right" ng-click="PropertiesVM.newProperty()"></i></h1>
 </div>
 <ion-view class="app-body">
-  <ion-content>
-
+  <ion-content class="has-header">
     <div class="noPropBody" ng-if="PropertiesVM.properties == null">No properties to view.<br> <a ui-sref="newProperty">Add one now</a>.</div>
-    <property ng-repeat="property in PropertiesVM.properties">
-      <ion-card>
-        <a ui-sref="singleProperty" ng-click="getInfo()"><img src="{{property.img}}"/></a>
-        <ion-card-content>
-          <ion-card-title>
-            <a ui-sref="singleProperty"><h3>{{property.streetAddress}}</h3></a>
-            <a ui-sref="singleProperty"><h5>{{property.city}}, {{property.state}}</h5></a>
-          </ion-card-title>
-          <!--ng-repeat within an ng-repeat-->
-          <div ng-repeat="tenant in property.tenants">
-            {{tenant.firstName}} {{tenant.lastName}}
-          </div>
-          <div ng-repeat="request in property.requests">
-            {{request.title}}
-          </div>
-        </ion-card-content>
-      </ion-card>
-      <br>
-    </property>
+    <div ng-repeat="property in PropertiesVM.properties" class="propcard row">
+      <div class="col col-50">
+        <a ui-sref="singleProperty"><h4>{{property.streetAddress}}</h4></a>
+        <a ui-sref="singleProperty"><h5>{{property.city}}, {{property.state}}</h5></a>
+      </div>
+      <div class="col col-50">
+        <div ng-repeat="tenant in property.tenants">
+          {{tenant.firstName}} {{tenant.lastName}}
+        </div>
+      </div>
+      <div class="propimagebox" >
+        <a ui-sref="singleProperty" ng-click="getInfo()"><img class="propimage" src="{{property.img}}"/></a>
+      </div>
+      <!--ng-repeat within an ng-repeat-->
+      <!--<div ng-repeat="request in property.requests">-->
+        <!--{{request.title}}-->
+      <!--</div>-->
+    </div>
   </ion-content>
 </ion-view>
 
@@ -44,6 +40,10 @@
       Settings
     </a>
     <a class="tab-item" ui-sref="inbox">
+      <i class="icon ion-archive"></i>
+      Settings
+    </a>
+    <a class="tab-item" ui-sref="userProfile">
       <i class="icon ion-person"></i>
       Settings
     </a>

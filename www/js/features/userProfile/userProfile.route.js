@@ -1,13 +1,13 @@
 angular
-  .module('landlordTenant.properties')
-  .config(propertiesConfig);
+  .module('landlordTenant.userProfile')
+  .config(userProfileConfig);
 
-function propertiesConfig($stateProvider) {
+function userProfileConfig($stateProvider) {
   $stateProvider.state({
-    name: 'properties',
-    url: '/properties',
-    templateUrl: 'js/features/properties/properties.html',
-    controller: 'PropertiesCtrl',
-    controllerAs: 'PropertiesVM'
+    name: 'userProfile',
+    url: '/userProfile',
+    templateUrl: 'js/features/userProfile/userProfile.html',
+    controller: 'UserProfileCtrl',
+    controllerAs: 'UserProfileVM'
   })
 }

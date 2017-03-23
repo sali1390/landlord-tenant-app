@@ -1,5 +1,8 @@
+<div class="bar bar-header bar-light">
+  <h1 class="title">Your Tenants </h1>
+</div>
 <ion-view>
-  <ion-content>
+  <ion-content class="has-header">
     <div ng-repeat="tenant in TenantsVM.tenants">
       {{tenant.firstName}} {{tenant.lastName}} <br>
     </div>
@@ -20,6 +23,10 @@
       Settings
     </a>
     <a class="tab-item" ui-sref="inbox">
+      <i class="icon ion-archive"></i>
+      Settings
+    </a>
+    <a class="tab-item" ui-sref="userProfile">
       <i class="icon ion-person"></i>
       Settings
     </a>

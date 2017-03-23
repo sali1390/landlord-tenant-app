@@ -1,8 +1,8 @@
 angular
-  .module('landlordTenant.properties')
-  .controller('PropertiesCtrl', PropertiesCtrl);
+  .module('landlordTenant.userProfile')
+  .controller('UserProfileCtrl', UserProfileCtrl);
 
-function PropertiesCtrl($http, $state) {
+function UserProfileCtrl($http, $state) {
   var vm = this;
 
   var userEmail = sessionStorage.getItem('userEmail');
@@ -17,36 +17,17 @@ function PropertiesCtrl($http, $state) {
 
   $http({
     method: 'GET',
-    url: '/api/properties'
+    url: '/api/landlords'
   }).then(function successCallback(res) {
 
-    console.log(res)
-
-    var properties = [];
-
     for(var i = 0; i < res.data.length; i++) {
-      if (res.data[i].landlord_id == userId) {
-          properties.push(res.data[i]);
+      if (res.data[i]._id == userId) {
 
-          vm.properties = properties
+        vm.userInfo = res.data[i];
+
       }else {
       }
     }
   });
-
-  //$http({
-  //  method: 'GET',
-  //  url: '/api/tenants'
-  //}).then(function successCallback(res) {
-  //  for (var j = 0; j < res.data.length; j++) {
-  //    if (res.data[j].property_id === res.data[i]._id) {
-  //      res.data[i].push(res.data[j]);
-  //    }
-  //  }
-  //})
-
-  vm.newProperty = function() {
-    $state.go('newProperty')
-  }
 
 }

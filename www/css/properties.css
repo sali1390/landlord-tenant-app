@@ -1,0 +1,14 @@
+.propcard {
+  margin: 15px 0 0;
+  padding: 0;
+}
+
+.propimage {
+  width: auto;
+  min-height: 100%;
+}
+
+h3, h4, h5, p {
+  font-family: 'Catamaran', sans-serif;
+  margin: 4px;
+}

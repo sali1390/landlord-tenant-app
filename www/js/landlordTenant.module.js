@@ -6,6 +6,7 @@ angular
     'landlordTenant.properties',
     'landlordTenant.newProperty',
     'landlordTenant.tenants',
+    'landlordTenant.userProfile',
     'landlordTenant.singleProperty',
     'landlordTenant.requests'
   ])

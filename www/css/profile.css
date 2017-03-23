@@ -1,0 +1,19 @@
+.profilePic {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  margin: 35px auto 20px;
+}
+.profilePic img {
+  display: block;
+  /* Stretch
+        height: 100%;
+        width: 100%; */
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.profilePg h3, h4, h5 {
+  text-align: center;
+}
