@@ -1,12 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-  <title>Landlord Tenant App</title>
+  <title>Ionic App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
 
+  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
   <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4e8ef7">
 
+  <!-- cordova.js required for cordova apps -->
+  <!--<script src="cordova.js"></script>-->
+
+  <!-- un-comment this code to enable service worker
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.log('Error', err));
+    }
+  </script>-->
+
+  <link href="build/main.css" rel="stylesheet">
   <!-- inject:css -->
   <link rel="stylesheet" href="css/ionic.app.css">
   <link rel="stylesheet" href="css/login-style.css">
@@ -21,46 +38,50 @@
 
 </ui-view>
 
-<script src="lib/ionic/js/ionic.bundle.js"></script>
-<script src="lib/ngCordova/dist/ng-cordova.js"></script>
+  <!-- Ionic's root component and where the app will load -->
+  <ion-app></ion-app>
 
+  <!-- The polyfills js is generated during the build process -->
+  <script src="build/polyfills.js"></script>
 
-<!-- cordova script (this will be a 404 during development) -->
-<!--<script src="cordova.js"></script>-->
+  <!-- The bundle js is generated during the build process -->
+  <script src="build/main.js"></script>
 
-<!--App JS-->
-<script src="js/landlordTenant.module.js"></script>
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+  <!--App JS-->
+  <script src="js/landlordTenant.module.js"></script>
 
-<script src="js/features/signin/signin.module.js"></script>
-<script src="js/features/signin/signin.controller.js"></script>
-<script src="js/features/signin/signin.route.js"></script>
+  <script src="js/features/signin/signin.module.js"></script>
+  <script src="js/features/signin/signin.controller.js"></script>
+  <script src="js/features/signin/signin.route.js"></script>
 
-<script src="js/features/signup/signup.module.js"></script>
-<script src="js/features/signup/signup.controller.js"></script>
-<script src="js/features/signup/signup.route.js"></script>
+  <script src="js/features/signup/signup.module.js"></script>
+  <script src="js/features/signup/signup.controller.js"></script>
+  <script src="js/features/signup/signup.route.js"></script>
 
-<script src="js/features/properties/properties.module.js"></script>
-<script src="js/features/properties/properties.controller.js"></script>
-<script src="js/features/properties/properties.route.js"></script>
+  <script src="js/features/properties/properties.module.js"></script>
+  <script src="js/features/properties/properties.controller.js"></script>
+  <script src="js/features/properties/properties.route.js"></script>
 
-<script src="js/features/tenants/tenants.module.js"></script>
-<script src="js/features/tenants/tenants.controller.js"></script>
-<script src="js/features/tenants/tenants.route.js"></script>
+  <script src="js/features/tenants/tenants.module.js"></script>
+  <script src="js/features/tenants/tenants.controller.js"></script>
+  <script src="js/features/tenants/tenants.route.js"></script>
 
-<script src="js/features/singleProperty/singleProperty.module.js"></script>
-<script src="js/features/singleProperty/singleProperty.controller.js"></script>
-<script src="js/features/singleProperty/singleProperty.route.js"></script>
+  <script src="js/features/singleProperty/singleProperty.module.js"></script>
+  <script src="js/features/singleProperty/singleProperty.controller.js"></script>
+  <script src="js/features/singleProperty/singleProperty.route.js"></script>
 
-<script src="js/features/requests/requests.module.js"></script>
-<script src="js/features/requests/requests.controller.js"></script>
-<script src="js/features/requests/requests.route.js"></script>
+  <script src="js/features/requests/requests.module.js"></script>
+  <script src="js/features/requests/requests.controller.js"></script>
+  <script src="js/features/requests/requests.route.js"></script>
 
-<script src="js/features/newProperty/newProperty.module.js"></script>
-<script src="js/features/newProperty/newProperty.controller.js"></script>
-<script src="js/features/newProperty/newProperty.route.js"></script>
+  <script src="js/features/newProperty/newProperty.module.js"></script>
+  <script src="js/features/newProperty/newProperty.controller.js"></script>
+  <script src="js/features/newProperty/newProperty.route.js"></script>
 
-<!--<script src="js/features/components/navbar/navbar.module.js"></script>-->
-<!--<script src="js/features/components/navbar/navbar.directive.js"></script>-->
+  <!--<script src="js/features/components/navbar/navbar.module.js"></script>-->
+  <!--<script src="js/features/components/navbar/navbar.directive.js"></script>-->
 
 
 </body>

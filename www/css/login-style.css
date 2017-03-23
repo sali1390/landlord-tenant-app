@@ -1,8 +1,28 @@
-.title {
-  text-align: center;
-  margin: 0 auto 100px;
+@import url('https://fonts.googleapis.com/css?family=Catamaran|Libre+Baskerville');
+
+body {
+  background-image: url('assets/images/bg.jpg')
 }
 
-.center-button {
-  width: 355px;
+.title {
+  text-align: center;
+  margin: 20px auto 150px;
+  font-family: 'Catamaran', serif;
+  color: #000000;
+}
+
+.button-calm {
+  height: 50px;
+  width: 200px;
+}
+
+.button-block {
+  width: 300px;
+}
+
+.signup {
+  text-align: center;
+  width: 100%;
+  background: #ffffff;
+  text-decoration: underline;
 }

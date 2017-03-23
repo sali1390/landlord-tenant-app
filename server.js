@@ -110,8 +110,6 @@ app.get("/api/landlords", function(req, res) {
 });
 
 app.get("/api/properties", function(req, res) {
-  //var userEmail = sessionStorage.getItem('userEmail');
-  //var userPassword = sessionStorage.getItem('userPassword');
 
   Property.find({
   }, function(err, doc) {
@@ -126,8 +124,6 @@ app.get("/api/properties", function(req, res) {
 });
 
 app.get("/api/tenants", function(req, res) {
-  //var userEmail = sessionStorage.getItem('userEmail');
-  //var userPassword = sessionStorage.getItem('userPassword');
 
   Tenant.find({
   }, function(err, doc) {
@@ -139,6 +135,22 @@ app.get("/api/tenants", function(req, res) {
   }).populate('property_id')
 });
 
+app.get("/api/requests", function(req, res) {
+
+  Request.find({
+  }, function(err, doc) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(doc);
+    }
+  }).populate([{
+    path: 'tenant_id'
+  },{
+    path: 'property_id'
+  }])
+});
+
 app.post("/api/landlords", function(req, res) {
   Landlord.create({
     firstName: req.body.firstName,
@@ -148,7 +160,6 @@ app.post("/api/landlords", function(req, res) {
   }, function(err) {
     if (err) return (err);
   });
-  res.end();
 });
 
 app.post("/api/properties", function(req, res) {
@@ -161,5 +172,4 @@ app.post("/api/properties", function(req, res) {
   }, function(err) {
     if (err) return (err);
   });
-  res.end();
 });

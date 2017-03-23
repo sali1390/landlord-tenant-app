@@ -1,0 +1,52 @@
+
+
+<div class="bar bar-header bar-light">
+<h1 class="title">Your Properties <i class="icon ion-plus" style="text-align:right" ng-click="PropertiesVM.newProperty()"></i></h1>
+</div>
+<ion-view class="app-body">
+  <ion-content>
+
+    <div class="noPropBody" ng-if="PropertiesVM.properties == null">No properties to view.<br> <a ui-sref="newProperty">Add one now</a>.</div>
+    <property ng-repeat="property in PropertiesVM.properties">
+      <ion-card>
+        <a ui-sref="singleProperty" ng-click="getInfo()"><img src="{{property.img}}"/></a>
+        <ion-card-content>
+          <ion-card-title>
+            <a ui-sref="singleProperty"><h3>{{property.streetAddress}}</h3></a>
+            <a ui-sref="singleProperty"><h5>{{property.city}}, {{property.state}}</h5></a>
+          </ion-card-title>
+          <!--ng-repeat within an ng-repeat-->
+          <div ng-repeat="tenant in property.tenants">
+            {{tenant.firstName}} {{tenant.lastName}}
+          </div>
+          <div ng-repeat="request in property.requests">
+            {{request.title}}
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <br>
+    </property>
+  </ion-content>
+</ion-view>
+
+<div class="tabs-striped tabs-color-calm">
+  <div class="tabs">
+    <a class="tab-item active" ui-sref="properties">
+      <i class="icon ion-home"></i>
+      Test
+    </a>
+    <a class="tab-item" ui-sref="tenants">
+      <i class="icon ion-ios-people"></i>
+      Favorites
+    </a>
+    <a class="tab-item" ui-sref="requests">
+      <i class="icon ion-gear-a"></i>
+      Settings
+    </a>
+    <a class="tab-item" ui-sref="inbox">
+      <i class="icon ion-person"></i>
+      Settings
+    </a>
+  </div>
+</div>
+

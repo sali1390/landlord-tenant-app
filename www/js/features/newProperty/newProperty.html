@@ -1,0 +1,23 @@
+<ion-view class="app-body">
+  <ion-content>
+
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" name="streetAddress" placeholder="Street Address" ng-model="NewPropertyVM.propInfo.streetAddress">
+      </label>
+      <label class="item item-input">
+        <input type="text" name="city" placeholder="City" ng-model="NewPropertyVM.propInfo.city">
+      </label>
+      <label class="item item-input">
+        <input type="text" name="state" placeholder="State" ng-model="NewPropertyVM.propInfo.state">
+      </label>
+      <label class="item item-input">
+        <input type="text" name="zip" placeholder="Zip" ng-model="NewPropertyVM.propInfo.zip">
+      </label>
+    </div>
+
+    <button class="button button-calm button-block center-button" ng-click="NewPropertyVM.propContinue()">
+      ADD PROPERTY
+    </button>
+  </ion-content>
+</ion-view>
