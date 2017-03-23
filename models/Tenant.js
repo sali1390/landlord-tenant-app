@@ -25,16 +25,18 @@ var TenantSchema = new Schema({
       "Your password needs to be longer."
     ]
   },
-  requests: {
-    // Store ObjectIds in the array
-    type: Schema.Types.ObjectId,
-    // The ObjectIds will refer to the ids in the Property model
-    ref: "Request"
-  },
   landlord: {
     type: Boolean,
     default: false
-  }
+  },
+  property_id: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Property'
+  }],
+  landlord_id: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Landlord'
+  }]
 });
 
 var Tenant = mongoose.model("Tenant", TenantSchema);

@@ -25,17 +25,6 @@ var LandlordSchema = new Schema({
       "Your password needs to be longer."
     ]
   },
-  properties: [{
-    // Store ObjectIds in the array
-    type: Schema.Types.ObjectId,
-    // The ObjectIds will refer to the ids in the Property model
-    ref: "Property"
-  }],
-  tenants: [{
-    type: Schema.Types.ObjectId,
-    // The ObjectIds will refer to the ids in the Tenant model
-    ref: "Tenant"
-  }],
   landlord: {
     type: Boolean,
     default: true

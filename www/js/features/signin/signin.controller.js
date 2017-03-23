@@ -14,14 +14,19 @@ function SigninCtrl($http, $state) {
     var userEmail = sessionStorage.getItem('userEmail');
     var userPassword = sessionStorage.getItem('userPassword');
 
+    var userId;
+
     function checkUser() {
       $http({
         method: 'GET',
         url: '/api/landlords'
       }).then(function successCallback(res) {
-        console.log(res);
+        console.log()
         for (i = 0; i < res.data.length; i++) {
           if (res.data[i].email == userEmail && res.data[i].password == userPassword) {
+            userId = res.data[i]._id;
+
+            sessionStorage.setItem('userId', userId);
             if(res.data[i].landlord === true) {
               $state.go("properties");
             } else {

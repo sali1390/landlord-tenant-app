@@ -24,15 +24,13 @@ var PropertySchema = new Schema({
     type: String,
     required: false
   },
+  landlord_id: [{
+    type: String,
+    ref: 'Landlord'
+  }],
   tenants: [{
     type: Schema.Types.ObjectId,
-    // The ObjectIds will refer to the ids in the Tenant model
-    ref: "Tenant"
-  }],
-  requests: [{
-    type: Schema.Types.ObjectId,
-    // The ObjectIds will refer to the ids in the Tenant model
-    ref: "Request"
+    ref: 'Tenant'
   }]
 });
 

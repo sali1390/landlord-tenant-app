@@ -18,9 +18,14 @@ var RequestSchema = new Schema({
   images: {
     type: String
   },
-  tenant: {
-    type: String
-  }
+  tenant_id: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Tenant'
+  }],
+  property_id: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Property'
+  }]
 });
 
 var Request = mongoose.model("Request", RequestSchema);

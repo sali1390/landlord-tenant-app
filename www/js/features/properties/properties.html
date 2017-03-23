@@ -4,7 +4,7 @@
 <ion-view class="app-body">
   <ion-content>
 
-    <div class="noPropBody" ng-if="PropertiesVM.properties =! null">No properties to view.<br> <a ui-sref="newProperty">Add one now</a>.</div>
+    <div class="noPropBody" ng-if="PropertiesVM.properties == null">No properties to view.<br> <a ui-sref="newProperty">Add one now</a>.</div>
     <property ng-repeat="property in PropertiesVM.properties">
       <ion-card>
         <a ui-sref="singleProperty" ng-click="getInfo()"><img src="{{property.img}}"/></a>

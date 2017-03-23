@@ -7,6 +7,7 @@ function TenantsCtrl($http) {
 
   var userEmail = sessionStorage.getItem('userEmail');
   var userPassword = sessionStorage.getItem('userPassword');
+  var userId = sessionStorage.getItem('userId');
 
   console.log("Logged in as " + userEmail);
 
@@ -23,16 +24,13 @@ function TenantsCtrl($http) {
     var tenants = [];
 
     for(var i = 0; i < res.data.length; i++) {
-      if (res.data[i].email == userEmail) {
+      if (res.data[i].landlord_id == userId) {
+        tenants.push(res.data[i]);
 
-        for(var j = 0; j < res.data[i].tenants.length; j++) {
-          tenants.push(res.data[i].tenants[j]);
-        }
         vm.tenants = tenants;
 
         console.log("Tenants: " + JSON.stringify(tenants));
 
-        return;
       } else {
 
       }

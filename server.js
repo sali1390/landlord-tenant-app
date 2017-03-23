@@ -113,7 +113,7 @@ app.get("/api/properties", function(req, res) {
   //var userEmail = sessionStorage.getItem('userEmail');
   //var userPassword = sessionStorage.getItem('userPassword');
 
-  Landlord.find({
+  Property.find({
   }, function(err, doc) {
     if (err) {
       console.log(err);
@@ -121,11 +121,7 @@ app.get("/api/properties", function(req, res) {
       res.send(doc);
     }
   }).populate({
-    path: 'properties',
-    populate: [{
-      path: 'tenants'
-    },
-    {path: 'requests'}]
+    path: 'tenants'
   });
 });
 
@@ -133,18 +129,17 @@ app.get("/api/tenants", function(req, res) {
   //var userEmail = sessionStorage.getItem('userEmail');
   //var userPassword = sessionStorage.getItem('userPassword');
 
-  Landlord.find({
+  Tenant.find({
   }, function(err, doc) {
     if (err) {
       console.log(err);
     } else {
       res.send(doc);
     }
-  }).populate({path: 'tenants'})
+  }).populate('property_id')
 });
 
 app.post("/api/landlords", function(req, res) {
-  console.log(req.body);
   Landlord.create({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -156,12 +151,13 @@ app.post("/api/landlords", function(req, res) {
   res.end();
 });
 
-app.post("/api/tenants", function(req, res) {
-  Tenant.create({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    password: req.body.password
+app.post("/api/properties", function(req, res) {
+  Property.create({
+    streetAddress: req.body.streetAddress,
+    city: req.body.city,
+    state: req.body.state,
+    zip: req.body.zip,
+    landlord_id: req.body.landlordid
   }, function(err) {
     if (err) return (err);
   });
