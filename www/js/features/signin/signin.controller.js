@@ -27,6 +27,8 @@ function SigninCtrl($http, $state) {
             userId = res.data[i]._id;
 
             sessionStorage.setItem('userId', userId);
+            sessionStorage.setItem('isLandlord', res.data[i].landlord)
+            sessionStorage.setItem('userName', res.data[i].firstName)
             if(res.data[i].landlord === true) {
               $state.go("properties");
             } else {

@@ -10,6 +10,7 @@ var Tenant = require("./models/Tenant.js");
 var Landlord = require("./models/Landlord.js");
 var Property = require("./models/Property.js");
 var Request = require("./models/Request.js");
+var Message = require("./models/Message.js");
 
 //var sampleLandlord = new Landlord({
 //  email: 'email3@email.com',
@@ -63,6 +64,20 @@ var Request = require("./models/Request.js");
 //});
 //
 //sampleRequest.save(function(err, doc) {
+//  if (err) {
+//    console.log(err);
+//  } else {
+//    console.log(doc);
+//  }
+//});
+
+//var sampleMessage = new Message({
+//  message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+//  sender_id: "58cc9dafb1f830262bd604c3",
+//  recipient_id: "58d08ccdcc4c358d74d6d4e5"
+//});
+//
+//sampleMessage.save(function(err, doc) {
 //  if (err) {
 //    console.log(err);
 //  } else {
@@ -148,6 +163,22 @@ app.get("/api/requests", function(req, res) {
     path: 'tenant_id'
   },{
     path: 'property_id'
+  }])
+});
+
+app.get("/api/messages", function(req, res) {
+
+  Message.find({
+  }, function(err, doc) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(doc);
+    }
+  }).populate([{
+    path: 'sender_id'
+  },{
+    path: 'recipient_id'
   }])
 });
 

@@ -7,6 +7,7 @@ angular
     'landlordTenant.newProperty',
     'landlordTenant.tenants',
     'landlordTenant.userProfile',
+    'landlordTenant.messages',
     'landlordTenant.singleProperty',
     'landlordTenant.requests'
   ])

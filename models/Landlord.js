@@ -25,6 +25,10 @@ var LandlordSchema = new Schema({
       "Your password needs to be longer."
     ]
   },
+  tenants: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Tenant'
+  }],
   landlord: {
     type: Boolean,
     default: true
