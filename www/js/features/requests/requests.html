@@ -7,15 +7,16 @@
       <!--<h1 class="title">Your Properties</h1>-->
     <!--</div>-->
     <request ng-repeat="request in RequestsVM.requests">
-      <ion-card>
-        <ion-card-content>
-          <ion-card-title>
-            <a ui-sref="singleProperty"><h3>{{request.title}}</h3></a>
-            <a ui-sref="singleProperty"><h5>{{request.description}}</h5></a>
-          </ion-card-title>
-          <p>{{request.tenant_id[0].firstName}}</p>
-        </ion-card-content>
-      </ion-card>
+      <div class="card">
+        <div class="item item-text-wrap">
+          <p class="reqTitle">{{request.title}}</p>
+          <p class="reqDate">Submitted: {{request.dateRequested}}</p>
+          <p class="reqDate">Submitted By: {{request.tenant_id[0].firstName}} {{request.tenant_id[0].lastName}}</p>
+        </div>
+        <div class="reqDes">
+          <p>{{request.description}}</p>
+        </div>
+      </div>
       <br>
     </request>
   </ion-content>

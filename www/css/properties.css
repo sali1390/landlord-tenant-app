@@ -1,5 +1,4 @@
 .propcard {
-  margin: 15px 0 0;
   padding: 0;
 }
 
@@ -9,6 +8,14 @@
 }
 
 h3, h4, h5, p {
-  font-family: 'Catamaran', sans-serif;
+  font-family: 'Muli', sans-serif;
   margin: 4px;
+}
+
+.street {
+  text-align: left;
+}
+
+.citystatezip {
+  text-align:left;
 }

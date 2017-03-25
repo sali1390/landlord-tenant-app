@@ -1,10 +1,10 @@
 <ion-view view-title="Landlord Sign-In">
   <ion-content>
     <div class="">
-      <h4 class="title">Sign In</h4>
+      <p class="signintitle">Sign In</p>
     </div>
 
-    <div class="row">
+    <div class="row signinform">
       <div class="col col-70 col-offset-15">
         <div class="list list-inset">
           <label class="item item-input">
@@ -14,11 +14,11 @@
             <input type="password" name="password" placeholder="Password" ng-model="LSigninVM.userInfo.password">
           </label>
         </div>
-
-        <button class="button button-calm button-block center-button" ng-click="LSigninVM.continue()">
+        <br>
+        <button class="button button-default button-block center-button" ng-click="LSigninVM.continue()">
           SIGN IN
         </button>
-
+        <br>
         <button ng-click="LSigninVM.signup()" class="signup">Don't have an account? Sign up now.</button>
       </div>
     </div>

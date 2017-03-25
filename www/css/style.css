@@ -5,3 +5,15 @@
 .noPropBody {
   text-align: center;
 }
+
+.bar-header {
+  color: #ffffff !important;
+}
+
+.bar {
+  color: #ffffff !important;
+}
+
+.title h1 {
+  color: #ffffff !important;
+}

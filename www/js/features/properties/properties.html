@@ -5,22 +5,23 @@
   <ion-content class="has-header">
     <div class="noPropBody" ng-if="PropertiesVM.properties == null">No properties to view.<br> <a ui-sref="newProperty">Add one now</a>.</div>
     <div ng-repeat="property in PropertiesVM.properties" class="propcard row">
-      <div class="col col-50">
-        <a ui-sref="singleProperty"><h4>{{property.streetAddress}}</h4></a>
-        <a ui-sref="singleProperty"><h5>{{property.city}}, {{property.state}}</h5></a>
-      </div>
-      <div class="col col-50">
-        <div ng-repeat="tenant in property.tenants">
-          {{tenant.firstName}} {{tenant.lastName}}
+      <div class="card">
+        <div class="item item-text-wrap">
+          <div class="col col-50">
+            <h2 class="street">{{property.streetAddress}}</h2>
+            <h4 class="citystatezip">{{property.city}}, {{property.state}} {{property.zip}}</h4>
+          </div>
+          <div class="col col-50">
+            <div ng-repeat="tenant in property.tenants">
+              <h4 class="citystatezip">{{tenant.firstName}} {{tenant.lastName}}</h4>
+            </div>
+            <br>
+          </div>
+          <div class="propimagebox" >
+            <img class="propimage" src="{{property.img}}"/>
+          </div>
         </div>
       </div>
-      <div class="propimagebox" >
-        <a ui-sref="singleProperty" ng-click="getInfo()"><img class="propimage" src="{{property.img}}"/></a>
-      </div>
-      <!--ng-repeat within an ng-repeat-->
-      <!--<div ng-repeat="request in property.requests">-->
-        <!--{{request.title}}-->
-      <!--</div>-->
     </div>
   </ion-content>
 </ion-view>
