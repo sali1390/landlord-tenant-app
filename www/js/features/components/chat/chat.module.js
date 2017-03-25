@@ -1,5 +1,6 @@
 var userId = sessionStorage.getItem('userId');
 var userName = sessionStorage.getItem('userName');
+var targetUser = sessionStorage.getItem('targetUser');
 
 var chat = angular.module('BasicChat', ['chat']);
 
@@ -29,3 +30,5 @@ chat.controller( 'chat', [ 'Messages', '$scope', function( Messages, $scope ) {
 }]);
 
 Messages.user({ id: userId, name : userName });
+
+Messages.send({ to: targetUser, data : message_body });
