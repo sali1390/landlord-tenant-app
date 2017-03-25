@@ -189,7 +189,26 @@ app.post("/api/landlords", function(req, res) {
     email: req.body.email,
     password: req.body.password
   }, function(err) {
-    if (err) return (err);
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(doc);
+    }
+  });
+});
+
+app.post("/api/tenants", function(req, res) {
+  Tenant.create({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    password: req.body.password
+  }, function(err) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(doc);
+    }
   });
 });
 
@@ -201,7 +220,11 @@ app.post("/api/properties", function(req, res) {
     zip: req.body.zip,
     landlord_id: req.body.landlordid
   }, function(err) {
-    if (err) return (err);
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(doc);
+    }
   });
 });
 
@@ -212,6 +235,10 @@ app.post("/api/requests", function(req, res) {
     tenant_id: req.body.tenantid,
     property_id: req.body.propertyid
   }, function(err) {
-    if (err) return (err);
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(doc);
+    }
   });
 });
