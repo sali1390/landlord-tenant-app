@@ -5,10 +5,10 @@
   <ion-content class="has-header">
     <div>
       <div class="profilePic">
-        <img src="https://randomuser.me/api/portraits/men/10.jpg">
+        <img src="https://randomuser.me/api/portraits/women/10.jpg">
       </div>
 
-      <h3 class="profilePg">{{TUserProfileVM.userInfo.firstName}} {{TUserProfileVM.userInfo.lastName}}</h3>
+      <h4 class="profilePg">{{TUserProfileVM.userInfo.firstName}} {{TUserProfileVM.userInfo.lastName}}</h4>
       <h4 class="profilePg">{{TUserProfileVM.userInfo.email}}</h4>
       <a ng-click="TUserProfileVM.userInfo.updatePass()"><h5 class="profilePg">Update Password</h5></a>
 
@@ -18,15 +18,7 @@
 
 <div class="tabs-striped tabs-color-calm">
   <div class="tabs">
-    <a class="tab-item" ui-sref="properties">
-      <i class="icon ion-home"></i>
-      Test
-    </a>
-    <a class="tab-item" ui-sref="tenants">
-      <i class="icon ion-ios-people"></i>
-      Favorites
-    </a>
-    <a class="tab-item" ui-sref="requests">
+    <a class="tab-item" ui-sref="trequests">
       <i class="icon ion-gear-a"></i>
       Settings
     </a>
@@ -34,7 +26,7 @@
       <i class="icon ion-archive"></i>
       Settings
     </a>
-    <a class="tab-item active" ui-sref="userProfile">
+    <a class="tab-item active" ui-sref="tuserProfile">
       <i class="icon ion-person"></i>
       Settings
     </a>
