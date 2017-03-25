@@ -204,3 +204,14 @@ app.post("/api/properties", function(req, res) {
     if (err) return (err);
   });
 });
+
+app.post("/api/requests", function(req, res) {
+  Request.create({
+    title: req.body.title,
+    description: req.body.description,
+    tenant_id: req.body.tenantid,
+    property_id: req.body.propertyid
+  }, function(err) {
+    if (err) return (err);
+  });
+});

@@ -1,13 +1,13 @@
 angular
-  .module('landlordTenant.requests')
-  .config(requestsConfig);
+  .module('landlordTenant.trequests')
+  .config(trequestsConfig);
 
-function requestsConfig($stateProvider) {
+function trequestsConfig($stateProvider) {
   $stateProvider.state({
-    name: 'requests',
-    url: '/requests',
-    templateUrl: 'js/features/requests/requests.html',
-    controller: 'RequestsCtrl',
-    controllerAs: 'RequestsVM'
+    name: 'trequests',
+    url: '/trequests',
+    templateUrl: 'js/features/trequests/trequests.html',
+    controller: 'TRequestsCtrl',
+    controllerAs: 'TRequestsVM'
   })
 }

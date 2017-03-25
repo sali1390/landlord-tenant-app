@@ -4,7 +4,7 @@
     <div class="">
       <h1 class="title">Landlord-Tenant Signup</h1>
     </div>
-    <p>It looks like you don't have an account just yet. Sign up today!</p>
+    <p class="bodyText">It looks like you don't have an account just yet. Sign up as a Landlord today!</p>
     <div class="list list-inset">
       <label class="item item-input">
         <input type="text" name="firstname" placeholder="First Name" ng-model="SignupVM.userInfo.firstname">
@@ -23,6 +23,7 @@
       </label>
     </div>
 
+    <p class="bodyText link" ui-sref="lsignin">Try Signing in Again</p>
     <button class="button button-calm button-block center-button" ng-click="SignupVM.landlordContinue()">
       SIGN UP
     </button>
@@ -32,7 +33,7 @@
     <div class="">
       <h1 class="title">Landlord-Tenant Signup</h1>
     </div>
-    <p>It looks like you don't have an account just yet. Sign up today!</p>
+    <p class="bodyText">It looks like you don't have an account just yet. Sign up as a Tenant today!</p>
     <div class="list list-inset">
       <label class="item item-input">
         <input type="text" name="firstname" placeholder="First Name" ng-model="SignupVM.userInfo.firstname">
@@ -54,6 +55,7 @@
       </label>
     </div>
 
+    <p class="bodyText link" ui-sref="tsignin">Try Signing in Again</p>
     <button class="button button-calm button-block center-button" ng-click="SignupVM.tenantContinue()">
       SIGN UP
     </button>

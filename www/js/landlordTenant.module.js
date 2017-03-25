@@ -1,7 +1,9 @@
 angular
   .module('landlordTenant', [
     'ionic',
-    'landlordTenant.signin',
+    'landlordTenant.welcome',
+    'landlordTenant.lsignin',
+    'landlordTenant.tsignin',
     'landlordTenant.signup',
     'landlordTenant.properties',
     'landlordTenant.newProperty',
@@ -9,13 +11,14 @@ angular
     'landlordTenant.userProfile',
     'landlordTenant.messages',
     'landlordTenant.singleProperty',
+    'landlordTenant.trequests',
     'landlordTenant.requests'
   ])
   .config(landlordTenantConfig)
   .run(landlordTenantRun);
 
 function landlordTenantConfig($urlRouterProvider) {
-  $urlRouterProvider.otherwise('/signin')
+  $urlRouterProvider.otherwise('/welcome')
 }
 
 function landlordTenantRun($ionicPlatform) {

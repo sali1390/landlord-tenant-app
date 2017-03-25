@@ -12,7 +12,7 @@
   <meta name="theme-color" content="#4e8ef7">
 
   <!-- cordova.js required for cordova apps -->
-  <script src="cordova.js"></script>
+  <!--<script src="cordova.js"></script>-->
 
   <!-- un-comment this code to enable service worker
   <script>
@@ -24,6 +24,15 @@
   </script>-->
 
   <link href="build/main.css" rel="stylesheet">
+  <!-- inject:css -->
+  <link rel="stylesheet" href="css/ionic.app.css">
+  <link rel="stylesheet" href="css/login-style.css">
+  <link rel="stylesheet" href="css/properties.css">
+  <link rel="stylesheet" href="css/profile.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+  <!-- endinject -->
 
 </head>
 <body ng-app="landlordTenant">
@@ -31,14 +40,59 @@
 
 </ui-view>
 
-  <!-- Ionic's root component and where the app will load -->
-  <!--<ion-app></ion-app>-->
 
-  <!-- The polyfills js is generated during the build process -->
-  <script src="build/polyfills.js"></script>
 
-  <!-- The bundle js is generated during the build process -->
-  <script src="build/main.js"></script>
+<!-- The polyfills js is generated during the build process -->
+<script src="build/polyfills.js"></script>
+
+<!-- The bundle js is generated during the build process -->
+<script src="build/main.js"></script>
+
+<script src="lib/ionic/js/ionic.bundle.js"></script>
+<script src="lib/ngCordova/dist/ng-cordova.js"></script>
+
+<!--App JS-->
+<script src="js/landlordTenant.module.js"></script>
+
+<script src="js/features/signin/signin.module.js"></script>
+<script src="js/features/signin/signin.controller.js"></script>
+<script src="js/features/signin/signin.route.js"></script>
+
+<script src="js/features/signup/signup.module.js"></script>
+<script src="js/features/signup/signup.controller.js"></script>
+<script src="js/features/signup/signup.route.js"></script>
+
+<script src="js/features/properties/properties.module.js"></script>
+<script src="js/features/properties/properties.controller.js"></script>
+<script src="js/features/properties/properties.route.js"></script>
+
+<script src="js/features/tenants/tenants.module.js"></script>
+<script src="js/features/tenants/tenants.controller.js"></script>
+<script src="js/features/tenants/tenants.route.js"></script>
+
+<script src="js/features/singleProperty/singleProperty.module.js"></script>
+<script src="js/features/singleProperty/singleProperty.controller.js"></script>
+<script src="js/features/singleProperty/singleProperty.route.js"></script>
+
+<script src="js/features/requests/requests.module.js"></script>
+<script src="js/features/requests/requests.controller.js"></script>
+<script src="js/features/requests/requests.route.js"></script>
+
+<script src="js/features/newProperty/newProperty.module.js"></script>
+<script src="js/features/newProperty/newProperty.controller.js"></script>
+<script src="js/features/newProperty/newProperty.route.js"></script>
+
+<script src="js/features/userProfile/userProfile.module.js"></script>
+<script src="js/features/userProfile/userProfile.controller.js"></script>
+<script src="js/features/userProfile/userProfile.route.js"></script>
+
+<script src="js/features/messages/messages.module.js"></script>
+<script src="js/features/messages/messages.controller.js"></script>
+<script src="js/features/messages/messages.route.js"></script>
+
+<!--<script src="js/features/components/navbar/navbar.module.js"></script>-->
+<!--<script src="js/features/components/navbar/navbar.directive.js"></script>-->
+
 
 </body>
 </html>

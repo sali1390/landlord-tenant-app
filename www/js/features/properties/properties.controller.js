@@ -34,17 +34,6 @@ function PropertiesCtrl($http, $state) {
     }
   });
 
-  //$http({
-  //  method: 'GET',
-  //  url: '/api/tenants'
-  //}).then(function successCallback(res) {
-  //  for (var j = 0; j < res.data.length; j++) {
-  //    if (res.data[j].property_id === res.data[i]._id) {
-  //      res.data[i].push(res.data[j]);
-  //    }
-  //  }
-  //})
-
   vm.newProperty = function() {
     $state.go('newProperty')
   }

@@ -12,7 +12,7 @@ function UserProfileCtrl($http, $state) {
   console.log("Logged in as " + userEmail);
 
   if(userEmail === null) {
-    $state.go('signin')
+    $state.go('lsignin')
   }
 
   $http({

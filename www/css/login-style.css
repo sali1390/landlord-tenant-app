@@ -1,21 +1,50 @@
-@import url('https://fonts.googleapis.com/css?family=Catamaran|Libre+Baskerville');
+@import url('https://fonts.googleapis.com/css?family=Catamaran|Muli:300,400,600');
+
+body {
+  background-image: url('/assets/images/bg2.jpg');
+  background-size: cover;
+}
+
+.welcomeBody {
+  text-align: center;
+  margin: 40px 0 0;
+}
+
+.logo {
+  text-align: center;
+  margin: 50px auto 20px;
+}
 
 .title {
   text-align: center;
-  margin: 20px auto 100px;
-  font-family: 'Catamaran', serif;
+  margin: 10px auto 0;
+  font-family: 'Muli', serif;
   color: #fff;
+  font-weight: 300;
 }
 
-.button, .button-calm {
-  height: 50px;
-  width: 200px;
-  background-color: #fff;
-  color: #00CED1;
+.welcomeHeader {
+  font-family: 'Muli', serif;
+  margin: 20px auto;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
 }
 
-.button-block {
-  width: 300px;
+.button-default {
+  font-family: 'Muli', serif;
+  color: #1560D5 !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  display: block !important;
+  position:relative !important;
+  height: 60px !important;
+  width: 220px !important;
+  background-color: rgba(255, 255, 255, .8) !important;
+  margin: 0 auto !important;
+  -webkit-border-radius:50px !important;
+  -moz-border-radius:50px !important;
+  border-radius:50px !important;
 }
 
 .signup {
@@ -23,5 +52,16 @@
   width: 100%;
   color: #fff;
   background-color: rgba(0, 0, 0, 0);
+  text-decoration: underline;
+}
+
+.bodyText {
+  margin: 15px 30px;
+  font-size: 15px;
+  text-align: center;
+  color: #fff;
+}
+
+.link {
   text-decoration: underline;
 }

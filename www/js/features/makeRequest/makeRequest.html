@@ -1,0 +1,24 @@
+<ion-view view-title="Make-Request">
+  <ion-content>
+    <div class="">
+      <h4 class="title">New Request</h4>
+    </div>
+
+    <div class="row">
+      <div class="col col-70 col-offset-15">
+        <div class="list list-inset">
+          <label class="item item-input">
+            <input type="text" name="title" placeholder="Title" ng-model="makeRequestsVM.requestInfo.title">
+          </label>
+          <label class="item item-input">
+            <input type="password" name="description" placeholder="Description" ng-model="makeRequestsVM.requestInfo.description">
+          </label>
+        </div>
+
+        <button class="button button-calm button-block center-button" ng-click="makeRequestsVM.continue()">
+          SUBMIT REQUEST
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

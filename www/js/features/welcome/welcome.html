@@ -1,0 +1,26 @@
+<ion-view view-title="Welcome" class="welcome">
+  <ion-content>
+    <div class="logo">
+      <img src="../../../assets/images/logo.png"><br>
+      <h2 class="title">Landlord/Tenant</h2>
+    </div>
+
+    <div class="row">
+      <div class="col col-70 col-offset-15 welcomeBody">
+
+        <p class="welcomeHeader">Are you a</p>
+
+        <button class="button button-default button-block center-button" ng-click="WelcomeVM.landlord()">
+          LANDLORD
+        </button>
+
+        <p class="welcomeHeader">or</p>
+
+        <button class="button button-default button-block center-button" ng-click="WelcomeVM.tenant()">
+          TENANT
+        </button>
+
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

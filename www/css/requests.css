@@ -1,0 +1,14 @@
+.reqTitle p{
+  font-size: 15px;
+  font-family: 'Muli', serif;
+  color: #1B77C4;
+}
+
+.reqDate p{
+  font-size: 10px;
+}
+
+.reqDes {
+  margin: 16px;
+  text-align: left
+}

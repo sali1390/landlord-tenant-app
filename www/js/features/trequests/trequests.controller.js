@@ -1,8 +1,8 @@
 angular
-  .module('landlordTenant.requests')
-  .controller('RequestsCtrl', RequestsCtrl);
+  .module('landlordTenant.trequests')
+  .controller('TRequestsCtrl', TRequestsCtrl);
 
-function RequestsCtrl($http, $state) {
+function TRequestsCtrl($http, $state) {
   var vm = this;
 
   var userEmail = sessionStorage.getItem('userEmail');
@@ -24,7 +24,7 @@ function RequestsCtrl($http, $state) {
     var requests = [];
 
     for(var i = 0; i < res.data.length; i++) {
-      if (res.data[i].property_id[0].landlord_id[0] == userId) {
+      if (res.data[i].tenant_id[0]._id == userId) {
 
         requests.push(res.data[i]);
 
@@ -34,5 +34,9 @@ function RequestsCtrl($http, $state) {
       }
     }
   });
+
+  vm.newRequest = function() {
+    $state.go('newRequest')
+  }
 
 }
