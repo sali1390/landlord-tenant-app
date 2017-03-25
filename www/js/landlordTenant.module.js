@@ -12,7 +12,8 @@ angular
     'landlordTenant.messages',
     'landlordTenant.singleProperty',
     'landlordTenant.trequests',
-    'landlordTenant.requests'
+    'landlordTenant.requests',
+    'landlordTenant.newRequests'
   ])
   .config(landlordTenantConfig)
   .run(landlordTenantRun);

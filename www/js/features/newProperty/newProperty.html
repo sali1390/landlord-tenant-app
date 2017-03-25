@@ -1,6 +1,9 @@
+<div class="bar bar-header bar-light">
+  <h1 class="title">Add a New Property </h1>
+</div>
 <ion-view class="app-body">
-  <ion-content>
-
+  <ion-content class=" has-header">
+    <p class="bodyText">Please enter the details of your new property.</p>
     <div class="list list-inset">
       <label class="item item-input">
         <input type="text" name="streetAddress" placeholder="Street Address" ng-model="NewPropertyVM.propInfo.streetAddress">
@@ -16,8 +19,10 @@
       </label>
     </div>
 
-    <button class="button button-calm button-block center-button" ng-click="NewPropertyVM.propContinue()">
+    <button class="button button-default button-block center-button" ng-click="NewPropertyVM.propContinue()">
       ADD PROPERTY
     </button>
+    <br>
+    <p class="bodyText link" ui-sref="properties">Return to Your Properties</p>
   </ion-content>
 </ion-view>
