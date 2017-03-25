@@ -13,7 +13,7 @@ angular
     'landlordTenant.singleProperty',
     'landlordTenant.trequests',
     'landlordTenant.requests',
-    'landlordTenant.newRequests'
+    'landlordTenant.newRequest'
   ])
   .config(landlordTenantConfig)
   .run(landlordTenantRun);
