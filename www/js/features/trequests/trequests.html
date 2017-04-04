@@ -6,7 +6,7 @@
     <!--<div class="bar bar-header bar-light">-->
       <!--<h1 class="title">Your Properties</h1>-->
     <!--</div>-->
-    <div ng-repeat="request in TRequestsVM.requests">
+    <div ng-repeat="request in TRequestsVM.requests" class="propCard">
       <div class="card">
         <div class="item item-text-wrap">
           <p class="reqTitle">{{request.title}}</p>
@@ -32,7 +32,7 @@
     </a>
     <a class="tab-item" ui-sref="tuserProfile">
       <i class="icon ion-person"></i>
-      Settings
+      User Profile
     </a>
   </div>
 </div>

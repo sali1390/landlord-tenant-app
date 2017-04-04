@@ -32,6 +32,9 @@ var LandlordSchema = new Schema({
   landlord: {
     type: Boolean,
     default: true
+  },
+  profilePic: {
+
   }
 });
 

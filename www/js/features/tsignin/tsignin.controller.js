@@ -26,10 +26,12 @@ function TSigninCtrl($http, $state) {
           if (res.data[i].email == userEmail && res.data[i].password == userPassword) {
             userId = res.data[i]._id;
 
-            sessionStorage.setItem('propertyId', res.data[i].property_id);
+            sessionStorage.setItem('propertyId', res.data[i].property_id[0]._id);
             sessionStorage.setItem('userId', userId);
             sessionStorage.setItem('isLandlord', res.data[i].landlord);
             sessionStorage.setItem('userName', res.data[i].firstName);
+
+            console.log("Prop id: " + res.data[i].property_id[0]._id);
 
             $state.go("trequests");
 

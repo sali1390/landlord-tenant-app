@@ -112,9 +112,6 @@ db.once("open", function() {
 });
 
 app.get("/api/landlords", function(req, res) {
-  //var userEmail = sessionStorage.getItem('userEmail');
-  //var userPassword = sessionStorage.getItem('userPassword');
-
   Landlord.find({}, function(err, doc) {
     if (err) {
     console.log(err);
@@ -125,7 +122,6 @@ app.get("/api/landlords", function(req, res) {
 });
 
 app.get("/api/properties", function(req, res) {
-
   Property.find({
   }, function(err, doc) {
     if (err) {
@@ -139,7 +135,6 @@ app.get("/api/properties", function(req, res) {
 });
 
 app.get("/api/tenants", function(req, res) {
-
   Tenant.find({
   }, function(err, doc) {
     if (err) {
@@ -151,7 +146,6 @@ app.get("/api/tenants", function(req, res) {
 });
 
 app.get("/api/requests", function(req, res) {
-
   Request.find({
   }, function(err, doc) {
     if (err) {
@@ -167,7 +161,6 @@ app.get("/api/requests", function(req, res) {
 });
 
 app.get("/api/messages", function(req, res) {
-
   Message.find({
   }, function(err, doc) {
     if (err) {
@@ -189,11 +182,7 @@ app.post("/api/landlords", function(req, res) {
     email: req.body.email,
     password: req.body.password
   }, function(err) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.send(doc);
-    }
+    if (err) return handleError(err);
   });
 });
 
@@ -204,11 +193,7 @@ app.post("/api/tenants", function(req, res) {
     email: req.body.email,
     password: req.body.password
   }, function(err) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.send(doc);
-    }
+    if (err) return handleError(err);
   });
 });
 
@@ -220,11 +205,7 @@ app.post("/api/properties", function(req, res) {
     zip: req.body.zip,
     landlord_id: req.body.landlordid
   }, function(err) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.send(doc);
-    }
+    if (err) return handleError(err);
   });
 });
 
@@ -235,10 +216,6 @@ app.post("/api/requests", function(req, res) {
     tenant_id: req.body.tenantid,
     property_id: req.body.propertyid
   }, function(err) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.send(doc);
-    }
+    if (err) return handleError(err);
   });
 });

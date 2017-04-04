@@ -9,6 +9,7 @@ angular
     'landlordTenant.newProperty',
     'landlordTenant.tenants',
     'landlordTenant.userProfile',
+    'landlordTenant.tuserProfile',
     'landlordTenant.messages',
     'landlordTenant.singleProperty',
     'landlordTenant.trequests',

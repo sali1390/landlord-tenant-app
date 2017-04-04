@@ -8,6 +8,7 @@ function NewRequestCtrl($http, $state) {
   var userEmail = sessionStorage.getItem('userEmail');
   var userPassword = sessionStorage.getItem('userPassword');
   var userId = sessionStorage.getItem('userId');
+  var propId = sessionStorage.getItem('propertyId');
 
   console.log("Logged in as " + userEmail);
 
@@ -21,9 +22,9 @@ function NewRequestCtrl($http, $state) {
       url: '/api/requests',
       data: {
         title: vm.reqInfo.title,
-        description: vm.reqInfo.title,
-        tenant_id: vm.reqInfo.userId,
-        property_id: '1234'
+        description: vm.reqInfo.description,
+        tenantid: userId,
+        propertyid: propId
       }
     }).then(function successCallback(res) {
       console.log("success");

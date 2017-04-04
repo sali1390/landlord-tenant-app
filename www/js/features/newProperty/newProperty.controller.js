@@ -24,10 +24,11 @@ function NewPropertyCtrl($http, $state) {
         city: vm.propInfo.city,
         state: vm.propInfo.state,
         zip: vm.propInfo.zip,
-        landlordid: userId
+        landlord_id: userId
       }
     }).then(function successCallback(res) {
       console.log("success");
+      console.log(data);
       $state.go("properties");
     })
   };
