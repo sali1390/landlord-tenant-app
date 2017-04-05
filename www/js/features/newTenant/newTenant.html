@@ -1,0 +1,32 @@
+<div class="bar bar-header bar-light">
+  <h1 class="title">Find a Tenant </h1>
+</div>
+<ion-view class="app-body">
+  <ion-content class=" has-header">
+    <p class="bodyText">Please enter the name of your new tenant:</p>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" name="firstName" placeholder="First Name" ng-model="NewTenantVM.tenInfo.firstName">
+      </label>
+      <label class="item item-input">
+        <input type="text" name="lastName" placeholder="Last Name" ng-model="NewTenantVM.tenInfo.lastName">
+      </label>
+    </div>
+    <button class="button button-default button-block center-button" ng-click="NewTenantVM.tenContinue()">
+      SEARCH TENANTS
+    </button>
+    <br>
+    <p class="bodyText link" ui-sref="tenants">Return to Your Tenants</p>
+
+    <div ng-repeat="tenant in newTenantVM.tenants">
+      <div class="card">
+        <div class="item item-text-wrap">
+          <h2 class="street">Tenant: {{tenant.firstName}} {{tenant.lastName}}</h2>
+          <h4 class="citystatezip">{{tenant.email}}</h4>
+          <br>
+          <h4 class="citystatezip"></h4>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
