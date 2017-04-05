@@ -18,24 +18,27 @@ function NewTenantCtrl($http, $state) {
   vm.tenContinue = function(req, res) {
     $http({
       method: 'GET',
-      url: '/api/findtenants',
-      data: {
-        firstName: vm.tenInfo.firstName
-      }
+      url: '/api/tenants'
     }).then(function successCallback(res) {
       console.log(res.data);
 
-      //var tenants = [];
-      //
-      //for(var i = 0; i < res.data.length; i++) {
-      //
-      //    tenants.push(res.data[i]);
-      //
-      //    vm.tenants = tenants;
-      //
-      //    console.log("Tenants: " + JSON.stringify(tenants));
-      //
-      //}
+      var tenants = [];
+
+      for(var i = 0; i < res.data.length; i++) {
+        if (res.data[i].landlord_id == userId && res.data[i].firstName == "Chase") {
+          tenants.push(res.data[i]);
+
+          vm.tenants = tenants
+        }else {
+          //
+          //tenants.push(res.data[i]);
+          //
+          //vm.tenants = tenants;
+          //
+          //console.log("Tenants: " + JSON.stringify(tenants));
+        }
+
+      }
 
 
     })
