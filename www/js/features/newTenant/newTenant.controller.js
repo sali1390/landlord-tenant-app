@@ -20,27 +20,22 @@ function NewTenantCtrl($http, $state) {
       method: 'GET',
       url: '/api/tenants'
     }).then(function successCallback(res) {
-      console.log(res.data);
 
       var tenants = [];
 
       for(var i = 0; i < res.data.length; i++) {
-        if (res.data[i].landlord_id == userId && res.data[i].firstName == "Chase") {
+        if (res.data[i].landlord_id != userId && res.data[i].firstName == vm.tenInfo.firstName && res.data[i].lastName == vm.tenInfo.lastName) {
           tenants.push(res.data[i]);
 
-          vm.tenants = tenants
+          vm.tenants = tenants;
+
+          console.log(tenants);
+
+          selectProperty();
         }else {
-          //
-          //tenants.push(res.data[i]);
-          //
-          //vm.tenants = tenants;
-          //
-          //console.log("Tenants: " + JSON.stringify(tenants));
+
         }
-
       }
-
-
     })
   };
 
