@@ -19,7 +19,7 @@ function SignupCtrl($http, $state) {
       sessionStorage.setItem('userEmail', vm.userInfo.email);
       sessionStorage.setItem('userPassword', vm.userInfo.password);
 
-      $state.go("properties");
+      $state.go("properties", {});
     })
   };
 
@@ -37,7 +37,7 @@ function SignupCtrl($http, $state) {
       sessionStorage.setItem('userEmail', vm.userInfo.email);
       sessionStorage.setItem('userPassword', vm.userInfo.password);
 
-      $state.go("requests");
+      $state.go("trequests", {});
     })
   };
 }

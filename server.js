@@ -103,6 +103,10 @@ mongoose.connect("mongodb://localhost/landlord-tenant");
 
 var db = mongoose.connection;
 
+function handleError(error) {
+  console.log(error)
+}
+
 db.on("error", function(error) {
   console.log("Mongoose Error: ", error);
 });
@@ -184,6 +188,8 @@ app.post("/api/landlords", function(req, res) {
   }, function(err) {
     if (err) return handleError(err);
   });
+
+  res.end();
 });
 
 app.post("/api/tenants", function(req, res) {
@@ -195,6 +201,8 @@ app.post("/api/tenants", function(req, res) {
   }, function(err) {
     if (err) return handleError(err);
   });
+
+  res.end();
 });
 
 app.post("/api/properties", function(req, res) {
@@ -207,6 +215,8 @@ app.post("/api/properties", function(req, res) {
   }, function(err) {
     if (err) return handleError(err);
   });
+
+  res.end();
 });
 
 app.post("/api/requests", function(req, res) {
@@ -218,4 +228,6 @@ app.post("/api/requests", function(req, res) {
   }, function(err) {
     if (err) return handleError(err);
   });
+
+  res.end();
 });

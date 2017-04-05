@@ -17,7 +17,7 @@ var PropertySchema = new Schema({
     required: true
   },
   zip: {
-    type: Number,
+    type: String,
     required: true
   },
   img: {
@@ -26,11 +26,13 @@ var PropertySchema = new Schema({
   },
   landlord_id: [{
     type: String,
-    ref: 'Landlord'
+    ref: 'Landlord',
+    required: false
   }],
   tenants: [{
     type: Schema.Types.ObjectId,
-    ref: 'Tenant'
+    ref: 'Tenant',
+    required: false
   }]
 });
 

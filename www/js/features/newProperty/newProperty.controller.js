@@ -12,7 +12,7 @@ function NewPropertyCtrl($http, $state) {
   console.log("Logged in as " + userEmail);
 
   if(userEmail === null) {
-    $state.go('signin')
+    $state.go('signin', {})
   }
 
   vm.propContinue = function(req, res) {
@@ -24,12 +24,12 @@ function NewPropertyCtrl($http, $state) {
         city: vm.propInfo.city,
         state: vm.propInfo.state,
         zip: vm.propInfo.zip,
-        landlord_id: userId
+        landlordid: userId
       }
     }).then(function successCallback(res) {
       console.log("success");
-      console.log(data);
-      $state.go("properties");
+
+      $state.go("properties", {});
     })
   };
 
