@@ -2,7 +2,7 @@ angular
   .module('landlordTenant.tenants')
   .controller('TenantsCtrl', TenantsCtrl);
 
-function TenantsCtrl($http) {
+function TenantsCtrl($http, $state) {
   var vm = this;
 
   var userEmail = sessionStorage.getItem('userEmail');
@@ -36,4 +36,8 @@ function TenantsCtrl($http) {
       }
     }
   });
+
+  vm.newTenant = function() {
+    $state.go('newTenant')
+  }
 }

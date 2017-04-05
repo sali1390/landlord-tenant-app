@@ -10,7 +10,7 @@
       <div class="card">
         <div class="item item-text-wrap">
           <p class="reqTitle">{{request.title}}</p>
-          <p class="reqDate">Submitted: {{request.dateRequested}}</p>
+          <p class="reqDate">Submitted: {{request.dateRequested | date : "EEEE, MMMM d, y h:mm a" }}</p>
         </div>
         <div class="reqDes">
             <p>{{request.description}}</p>
@@ -22,7 +22,7 @@
 </ion-view>
 <div class="tabs-striped tabs-color-calm">
   <div class="tabs">
-    <a class="tab-item active" ui-sref="requests">
+    <a class="tab-item active" ui-sref="trequests">
       <i class="icon ion-gear-a"></i>
       Settings
     </a>

@@ -10,7 +10,7 @@
       <div class="card">
         <div class="item item-text-wrap">
           <p class="reqTitle">{{request.title}}</p>
-          <p class="reqDate">Submitted: {{request.dateRequested}}</p>
+          <p class="reqDate">Submitted: {{ request.dateRequested | date : "EEEE, MMMM d, y h:mm a" }}</p>
           <p class="reqDate">Submitted By: {{request.tenant_id[0].firstName}} {{request.tenant_id[0].lastName}}</p>
         </div>
         <div class="reqDes">

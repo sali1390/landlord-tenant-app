@@ -149,6 +149,18 @@ app.get("/api/tenants", function(req, res) {
   }).populate('property_id')
 });
 
+app.get("/api/findtenants", function(req, res) {
+  Tenant.find({
+      firstName: req.body.firstName
+  }, function(err, doc) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(doc);
+    }
+  })
+});
+
 app.get("/api/requests", function(req, res) {
   Request.find({
   }, function(err, doc) {
